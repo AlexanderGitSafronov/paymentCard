@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $period_cookie = 2592000; // 30 дней (2592000 секунд)
  
@@ -29,7 +29,7 @@ $_SESSION['utms']['utm_campaign'] = $_GET['utm_campaign'] ? $_GET['utm_campaign'
 $_SESSION['utms']['opa'] = $_GET['opa'] ? $_GET['opa'] : $_COOKIE['opa'];
 $_SESSION['utms']['bid'] = $_GET['bid'] ? $_GET['bid'] : $_COOKIE['bid'];
 
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,8 +55,8 @@ $_SESSION['utms']['bid'] = $_GET['bid'] ? $_GET['bid'] : $_COOKIE['bid'];
    <div class="container">
        <div class="main__wrapper">
            <div>
-            <div class="f-merchant-name">whitegallery.store</div>
-            <div class="f-merchant-name">http://whitegallery.store/gamanets</div>
+            <!-- <div class="f-merchant-name">whitegallery.store</div>
+            <div class="f-merchant-name">http://whitegallery.store/gamanets</div> -->
             <div class="price__wrapper">
                 <b class="f-amount">535,<sup>35</sup></b> 
                 <span class="f-currency amount_currency_Ke0jp">ГРН</span>
@@ -69,7 +69,7 @@ $_SESSION['utms']['bid'] = $_GET['bid'] ? $_GET['bid'] : $_COOKIE['bid'];
 
 
             <form action="spasibo.php" method="post">
-                <?php if (isset($_GET["utm_source"])) : ?> <input type="hidden" name="utm_source" value="<?=htmlspecialchars($_GET["utm_source"]);?>" />
+                <!-- <?php if (isset($_GET["utm_source"])) : ?> <input type="hidden" name="utm_source" value="<?=htmlspecialchars($_GET["utm_source"]);?>" />
                 <?php endif; ?><?php if (isset($_GET["utm_content"])) : ?><input type="hidden" name="utm_content" value="<?=htmlspecialchars($_GET["utm_content"]);?>" />
                 <?php endif; ?><?php if (isset($_GET["utm_term"])) : ?><input type="hidden" name="utm_term" value="<?=htmlspecialchars($_GET["utm_term"]);?>" />
                 <?php endif; ?><?php if (isset($_GET["utm_campaign"])) : ?><input type="hidden" name="utm_campaign" value="<?=htmlspecialchars($_GET["utm_campaign"]);?>" />
@@ -77,7 +77,7 @@ $_SESSION['utms']['bid'] = $_GET['bid'] ? $_GET['bid'] : $_COOKIE['bid'];
                   <?php endif; ?><?php if (isset($_GET["opa"])) : ?><input type="hidden" name="opa" value="<?=htmlspecialchars($_GET["opa"]);?>" />
                    <?php endif; ?><?php if (isset($_GET["bid"])) : ?><input type="hidden" name="bid" value="<?=htmlspecialchars($_GET["bid"]);?>" />
                  <?php endif; ?><?php if (isset($_GET["subid"])) : ?><input type="hidden" name="subid" value="<?=htmlspecialchars($_GET["subid"]);?>" />
-                 <?php endif; ?><input type="hidden" name="subid" value="{subid}" />
+                 <?php endif; ?><input type="hidden" name="subid" value="{subid}" /> -->
                 <div class="card">
                     <div class="card__top">
                         <div class="card__top_img">
